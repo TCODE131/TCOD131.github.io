@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tcode 練習平台</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" href="static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+</head>
+
+<body>
+    <header>💡 Tcode 練習平台</header>
+
+    <div class="container">
+        <aside id="sidebar">
+            <div class="problem-list">
+                <h3>📘 題庫列表</h3>
+                <div id="problems"></div>
+            </div>
+        </aside>
+
+        <main id="main-area">
+            <section id="problem-detail">
+                <h2 id="problem-title">請選擇題目開始練習</h2>
+                <p id="problem-desc">題目內容將顯示於此。</p>
+            </section>
+
+            <div id="editor"></div>
+
+            <div class="controls">
+                <button id="run">▶️ 執行程式</button>
+                <button id="submit">🏁 提交並評分</button>
+                <span class="status">狀態：<span id="status">Idle</span></span>
+            </div>
+
+            <div id="output">
+                <h3>執行結果</h3>
+                <pre id="console">等待執行中...</pre>
+            </div>
+        </main>
+    </div>
+
+    <script src="static/problems.js"></script>
+    <script src="static/main.js"></script>
+    <script src="static/autocomplete.js"></script>
+</body>
+
+</html>
