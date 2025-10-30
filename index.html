@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tcode — 練習平台</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="icon" href="static/favicon.ico" />
+    <!-- Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <script>
+        window.require.config({
+            paths: {
+                'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs'
+            }
+        });
+    </script>
+    <!-- Pyodide -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>💡 Tcode 練習平台</h1>
+        <p>在瀏覽器中直接執行 Python，零伺服器、零安裝</p>
+    </header>
+
+    <main>
+        <aside id="sidebar">
+            <input id="search" placeholder="🔎 搜尋題目 / 標籤" />
+            <ul id="problemList"></ul>
+        </aside>
+
+        <section id="workspace">
+            <div id="problemContainer">
+                <h2 id="title">請選擇題目</h2>
+                <div id="description"></div>
+            </div>
+
+            <div id="editor"></div>
+
+            <div id="toolbar">
+                <button id="runBtn">▶ 執行</button>
+                <button id="submitBtn">✅ 提交並評分</button>
+                <span id="status">狀態：Idle</span>
+            </div>
+
+            <div id="output">
+                <h3>執行結果</h3>
+                <pre id="console"></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Tcode | 由 Pyodide + Monaco Editor 提供支援</p>
+    </footer>
+
+    <script src="static/problems.js"></script>
+    <script src="static/main.js"></script>
+    <script src="static/autocomplete.js"></script>
+</body>
+
+</html>
